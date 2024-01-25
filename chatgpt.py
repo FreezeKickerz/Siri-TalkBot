@@ -1,10 +1,9 @@
-from types import NoneType
 import listen
 import speech_recognition as sr
 import openai
 import speak
 
-openai.api_key="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"
+openai.api_key="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"
 
 messages = [
         {
@@ -34,7 +33,7 @@ def main():
     microphone = sr.Microphone()    
     while True:
         user_input = listen.recognize_speech_from_mic(recognizer, microphone)
-        if type(user_input) == NoneType:
+        if type(user_input) == None:
             continue
         if 'quit' in user_input.lower():
             break
